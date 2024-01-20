@@ -4,9 +4,9 @@ import ShopPreview from './ShopPreview';
 
 function Dashboard(props) {
     const shopToggle = props.shopToggle;
-
+    const [loading, setLoading] = useState(true);
     
-    const [shops, setShops] = useState(null);
+    const [shops, setShops] = useState([]);
 
     const fetchData = async () => {
         try {
@@ -15,6 +15,8 @@ function Dashboard(props) {
             setShops(result);
         } catch (error) {
             console.error(error);
+        } finally {
+            setLoading(false)
         }
     }
 
@@ -23,6 +25,7 @@ function Dashboard(props) {
     }, []);
 
     return (
+        
         <div className="App">
             <div className="leftDiv">
                 <div className="topComponent">
@@ -40,6 +43,9 @@ function Dashboard(props) {
                 </div>
             </div>
             <div className="rightDiv">
+                {loading ? (
+                    <p>Loading...</p>
+                ) : (
                 <div className="scrollableContainer">
                     {shops.map((shop) => (
                         <ShopPreview 
@@ -51,7 +57,7 @@ function Dashboard(props) {
                             className="shopSquare"
                         />
                     ))}
-                </div>
+                </div>)}
             </div>
         </div>
     );
