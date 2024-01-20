@@ -1,9 +1,24 @@
 import './Dashboard.css';
+import ShopPreview from './ShopPreview';
 
 function Dashboard(props) {
     const shopToggle = props.shopToggle;
 
-    const merchants = Array.from({ length: 20 }, (_, index) => index + 1);
+    const [shops, setShops] = useState(null);
+
+    const fetchData = async () => {
+        try {
+            const response = await fetch("localhost:3000/api/");
+            const result = await response.json();
+            setShops(result);
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+    useEffect(() => {
+        fetchData();
+    }, []);
 
     return (
         <div className="App">
@@ -24,8 +39,15 @@ function Dashboard(props) {
             </div>
             <div className="rightDiv">
                 <div className="scrollableContainer">
-                    {merchants.map((merchant) => (
-                        <div key={merchant} className="shopSquare" onClick={() => shopToggle(true)}>Merchant {merchant}</div>
+                    {shops.map((shop) => (
+                        <ShopPreview 
+                            imglink={shop.imglink} 
+                            avgprice={shop.avgprice} 
+                            waitingnumber={shop.waitingnumber}
+                            shopname={shop.shopname}
+                            onClick={() => shopToggle(true)}
+                            className="shopSquare"
+                        />
                     ))}
                 </div>
             </div>
