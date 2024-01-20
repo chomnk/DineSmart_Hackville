@@ -1,6 +1,0 @@
-@DineSmartWEBAPI_HostAddress = http://localhost:5045
-
-GET {{DineSmartWEBAPI_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
