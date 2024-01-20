@@ -1,9 +1,11 @@
+import { useState, useEffect } from 'react';
 import './Dashboard.css';
 import ShopPreview from './ShopPreview';
 
 function Dashboard(props) {
     const shopToggle = props.shopToggle;
 
+    
     const [shops, setShops] = useState(null);
 
     const fetchData = async () => {
