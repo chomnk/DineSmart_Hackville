@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dinesmart", "dinesmart", "{B37C841B-311F-45E2-9D90-2189EDEB52AA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DineSmartWEBAPI", "dinesmart\DineSmartWEBAPI\DineSmartWEBAPI.csproj", "{869714E3-662B-417A-93AB-11ACBFB35080}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{869714E3-662B-417A-93AB-11ACBFB35080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869714E3-662B-417A-93AB-11ACBFB35080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869714E3-662B-417A-93AB-11ACBFB35080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869714E3-662B-417A-93AB-11ACBFB35080}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{869714E3-662B-417A-93AB-11ACBFB35080} = {B37C841B-311F-45E2-9D90-2189EDEB52AA}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41F22CF7-1286-446F-8E49-4A0A0B43857D}
+	EndGlobalSection
+EndGlobal
