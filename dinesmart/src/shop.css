@@ -24,6 +24,17 @@
     flex: 1;
 }
 
+.shop_left_middle {
+    width: 100%;
+    height: 100%;
+
+}
+
+.shop_left_top {
+    width: 100%;
+    height: 100%;
+}
+
 .shop_left_top {
     font-size: 48px;
     text-align: center;

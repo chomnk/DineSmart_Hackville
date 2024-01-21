@@ -26,18 +26,22 @@ function Shop(props) {
     const [loading, setLoading] = useState(true);
     const [reviews, setReviews] = useState([]);
 
-    const handleQueuePressed = async (restaurantName, queueButtonState) => {
+    const handleQueuePressed = async () => {
         //poll isQueue first
         try {
+            await axios.get("http://localhost:5166/api/Restaurant/allusers");
             const response = await axios.get('http://localhost:5166/api/Restaurant/isQueue/' + username)
             if (response.data == "Not in Queue") {
                 setQueueButtonState("Exit the queue"); 
                 setQueueButtonColor("red")
+                alert("You have joined the queue!")
             } else {
                 setQueueButtonState("Join the queue"); 
                 setQueueButtonState("green"); 
+                alert("You have exit the queue!")
             }
             const response_updateQueue = await axios.post('http://localhost:5166/api/Restaurant/queue/' + username + '/' + restaurantName);
+
         } catch (error) {
             console.error(error);
         } finally {
@@ -50,6 +54,7 @@ function Shop(props) {
         const text = element.value;
         try {
             const response = await axios.post('http://localhost:5166/api/Restaurant/newReview/' + username + '/' + restaurantName + '/' + text + '/' + String(rating));
+            alert("You have submitted the review!")
         } catch (error) {
             console.error(error);
         } finally {
@@ -108,7 +113,9 @@ function Shop(props) {
                 <div className="shop_right_bottom">
                     <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Type something..."/>
                     <div className="shop_right_bottom_right">
-                        <div className='shop_review_queue' style={{'color':{queueButtonColor}}} onClick={() => {handleQueuePressed(restaurantName, queueButtonState)}}>
+                        <div 
+                            className='shop_review_queue' 
+                            style={{'color':{queueButtonColor}}} onClick={() => {handleQueuePressed()}}>
                             {queueButtonState}
                         </div>
                         <div className='shop_review_submit' onClick={() => {handleReviewSubmit()}}>
