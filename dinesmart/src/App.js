@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Shop from './Shop.js';
 import Dashboard from './Dashboard.js';
 import { useState } from 'react';
-import Authentification from './login/Authentification.js';
+import Authentification from './Authentification.js';
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false)

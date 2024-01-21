@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import logo from "./logo.png"
 import axios from 'axios';
 
 function Authentification(props) {
