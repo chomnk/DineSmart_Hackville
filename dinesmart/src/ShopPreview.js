@@ -1,5 +1,4 @@
-
-
+import './Dashboard.css'
 function ShopPreview(props) {
     const imglink = props.imglink;
     //const avgprice = props.avgprice;
@@ -8,7 +7,7 @@ function ShopPreview(props) {
     const shopname = props.shopname;
     const clickhandle = props.onClick;
     return (
-        <div onClick={() => clickhandle()}>
+        <div className="shopSquare" onClick={() => clickhandle()}>
             <div className="top">{shopname}</div>
             <div className="middle">
                 <img src={imglink} />

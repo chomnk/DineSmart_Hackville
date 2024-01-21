@@ -4,22 +4,86 @@ import { render } from "react-dom";
 import './shop.css'
 
 function Shop(props) {
-    const shopId = props.shopId;
+    const shopInfo = props.shopInfo;
+
+    const restaurantName = props.restaurantName;
+    const imageLink = props.imageLink;
+    const peopleInQueue = props.peopleInQueue;
+
     const shopToggle = props.shopToggle;
-    
 
-    const handleQueuePressed = () => {
+    const [queueButtonState, setQueueButtonState] = useState("Join the queue")
+    const [queueButtonColor, setQueueButtonColor] = useState("green")
 
+    const username = props.username;
+
+    const textAreaRef = useRef(null);
+    const [textareaValue, setTextareaValue] = useState("");
+    const [rating, SetRating] = useState(3);
+
+    const [loading, setLoading] = useState(true);
+    const [reviews, setReviews] = useState([]);
+
+    const handleQueuePressed = async (restaurantName, queueButtonState) => {
+        try {
+            const response = await axios.post('http://localhost:5166/api/Restaurant/queue/' + username + '/' + restaurantName + '/' + , {
+                "restaurantName": restaurantName,
+                "inOrExist": queueButtonState == "Join the queue" ? "in" : "exist"
+            });
+
+            if (queueButtonState == "Join the queue") { 
+                setQueueButtonState("Exit the queue"); 
+            } else {
+                setQueueButtonState("Join the queue"); 
+            }
+
+            if (queueButtonColor == "green") { 
+                setQueueButtonColor("red")
+            } else {
+                setQueueButtonState("green"); 
+            }
+        } catch (error) {
+            console.error(error);
+        } finally {
+
+        }
     }
+
+    const handleReviewSubmit = async () => {
+        const element = textAreaRef.current;
+        const text = element.value;
+        try {
+            const response = await axios.post('http://localhost:5166/api/Restaurant/newReview/' + username + '/' + restaurantName + '/' + text + '/' + String(rating));
+        } catch (error) {
+            console.error(error);
+        } finally {
+            element.value = "";
+        }
+    }
+
+    const fetchReviews = async () => {
+        try {
+            const response = await axios.post('http://localhost:5166/api/Restaurant/findreview/' + restaurantName);
+            setReviews(response.data);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            
+        }
+    }
+
+    useEffect(() => {
+        fetchReviews().then(data => { setLoading(false);});
+    }, []);
 
     return (
         <div className="shop">
             <div className="shop_left">
                 <div className="shop_left_top">
-                    {/*TODO: insert shop name here*/}
+                    {restaurantName}
                 </div>
                 <div className="shop_left_middle">
-                    {/*TODO: insert shop sentimental analysis here*/}
+                    <img src={imageLink} />
                 </div>
                 <div className="shop_left_bottom" onClick={() => shopToggle(null)}>
                     Back
@@ -34,19 +98,24 @@ function Shop(props) {
                             count={5}
                             size={24}    
                             activeColor="#ffd700"
+                            onChange={SetRating}
                         ></ReactStars>
                     </div>
                 </div>
-                <div className="shop_right_middle"></div>
+                {loading ? (
+                    <p>Loading...</p>
+                ) : <div className="shop_right_middle">
+                        {reviews.map((review, index) => {
+                            <Reviews props={review} key={index} />
+                        })}
+                </div>}
                 <div className="shop_right_bottom">
-                    <textarea className="shop_right_bottom_left" placeholder="Type something..."/>
+                    <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Type something..." value={textareaValue}/>
                     <div className="shop_right_bottom_right">
-                        <div className='shop_review_queue' onClick={() => {
-                            
-                        }}>
-                            Join the queue
+                        <div className='shop_review_queue' style={{'color':{queueButtonColor}}} onClick={() => {handleQueuePressed(restaurantName, queueButtonState)}}>
+                            {queueButtonState}
                         </div>
-                        <div className='shop_review_submit'>
+                        <div className='shop_review_submit' onClick={() => {handleReviewSubmit()}}>
                             Submit review!
                         </div>
                     </div>
