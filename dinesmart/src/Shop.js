@@ -3,7 +3,7 @@ import React from "react";
 import { render } from "react-dom";
 import './shop.css'
 import { useState, useRef, useEffect } from "react";
-import { axios } from "axios";
+import axios from "axios";
 import Reviews from "./Reviews";
 
 function Shop(props) {
