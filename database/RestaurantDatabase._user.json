@@ -1,0 +1,228 @@
+[{
+  "_id": {
+    "$oid": "65ac21684e03e1e3b063f4b7"
+  },
+  "Name": "david",
+  "ListOfReviews": {
+    "Chipotle": {
+      "k": "It's good",
+      "v": "4.1"
+    },
+    "McDonalds": {
+      "k": "I like the filet o fish",
+      "v": "4.5"
+    },
+    "Lazeez": {
+      "k": "fell off",
+      "v": "3.8"
+    },
+    "Tim Hortons": {
+      "k": "its cool",
+      "v": "5"
+    },
+    "North Side Bistro": {
+      "k": "835pm test",
+      "v": "3"
+    }
+  },
+  "Password": "string",
+  "WaitListId": null
+},
+{
+  "_id": {
+    "$oid": "65ac21884e03e1e3b063f4b9"
+  },
+  "Name": "Teng",
+  "ListOfReviews": {
+    "Chipotle": {
+      "k": "It's fine",
+      "v": "4.1"
+    },
+    "McDonalds": {
+      "k": "I like the bigmac",
+      "v": "4.8"
+    },
+    "Lazeez": {
+      "k": "still good",
+      "v": "3.9"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2c4d78025ce681c163d2"
+  },
+  "Name": "playboi carti",
+  "ListOfReviews": {
+    "Lean": {
+      "k": "its good mayn",
+      "v": "5"
+    },
+    "food": {
+      "k": "its okay",
+      "v": "3"
+    },
+    "iggy azelea": {
+      "k": "idk",
+      "v": "3"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2c7b78025ce681c163d4"
+  },
+  "Name": "A$AP Rocky",
+  "ListOfReviews": {
+    "money": {
+      "k": "its good mayn",
+      "v": "5"
+    },
+    "cats": {
+      "k": "its good mayn",
+      "v": "5"
+    },
+    "grass": {
+      "k": "its good mayn",
+      "v": "5"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2cc778025ce681c163d5"
+  },
+  "Name": "Big Sean",
+  "ListOfReviews": {
+    "McDonalds": {
+      "k": "its good mayn",
+      "v": "5"
+    },
+    "Tim Hortons": {
+      "k": "its good mayn",
+      "v": "5"
+    },
+    "Chipotle": {
+      "k": "its good mayn",
+      "v": "5"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2cfd78025ce681c163d6"
+  },
+  "Name": "Keshi",
+  "ListOfReviews": {
+    "McDonalds": {
+      "k": "i like",
+      "v": "4"
+    },
+    "Freshii": {
+      "k": "healthy",
+      "v": "5"
+    },
+    "Bubbletea": {
+      "k": "good",
+      "v": "5"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2daf78025ce681c163d7"
+  },
+  "Name": "Joji",
+  "ListOfReviews": {
+    "Colman Commons": {
+      "k": "i like",
+      "v": "4"
+    },
+    "North Side Bistro": {
+      "k": "healthy",
+      "v": "5"
+    },
+    "Starbucks": {
+      "k": "good",
+      "v": "5"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2dd778025ce681c163d8"
+  },
+  "Name": "Vince Staples",
+  "ListOfReviews": {
+    "Colman Commons": {
+      "k": "i dont like",
+      "v": "2"
+    },
+    "North Side Bistro": {
+      "k": "not healthy",
+      "v": "2"
+    },
+    "Starbucks": {
+      "k": "not good",
+      "v": "2"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2e0378025ce681c163d9"
+  },
+  "Name": "Chance The Rapper",
+  "ListOfReviews": {
+    "Colman Commons": {
+      "k": "AH",
+      "v": "5"
+    },
+    "North Side Bistro": {
+      "k": "AH",
+      "v": "4"
+    },
+    "Starbucks": {
+      "k": "AH",
+      "v": "3"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+},
+{
+  "_id": {
+    "$oid": "65ac2e2478025ce681c163da"
+  },
+  "Name": "Eminem",
+  "ListOfReviews": {
+    "Colman Commons": {
+      "k": "ye",
+      "v": "3"
+    },
+    "North Side Bistro": {
+      "k": "ye",
+      "v": "3"
+    },
+    "Starbucks": {
+      "k": "ye",
+      "v": "3"
+    }
+  },
+  "Password": "string",
+  "WaitListId": "string"
+}]

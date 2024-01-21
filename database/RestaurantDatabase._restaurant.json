@@ -1,0 +1,74 @@
+[
+  {
+    "_id": {
+      "$oid": "65ac5cb39573ba300831059a"
+    },
+    "name": "davis food court",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-01.png.webp?itok=ZngFXLBr",
+    "averageCost": 2,
+    "peopleInQueue": 0
+  },
+  {
+    "_id": {
+      "$oid": "65ac608b9573ba300831059e"
+    },
+    "name": "colman commons",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-04.png.webp?itok=vxNpbQYd",
+    "averageCost": 2,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac60aa9573ba30083105a0"
+    },
+    "name": "north side bistro",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-03.png.webp?itok=hy9-acG2",
+    "averageCost": 2,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac60b39573ba30083105a2"
+    },
+    "name": "ib court",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-02.png.webp?itok=e0AT40XZ",
+    "averageCost": 0,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac60b99573ba30083105a4"
+    },
+    "name": "fair trade cafe",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-06.png.webp?itok=-YnmwJtF",
+    "averageCost": 3,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac60f19573ba30083105b0"
+    },
+    "name": "circuit break cafe",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos-05.png.webp?itok=hjzHn22x",
+    "averageCost": 2,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac61659573ba30083105b2"
+    },
+    "name": "tim hortons",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos_w%20Brands_V1-08.jpg.webp?itok=0Z2uuG54",
+    "averageCost": 1,
+    "peopleInQueue": 1
+  },
+  {
+    "_id": {
+      "$oid": "65ac616d9573ba30083105b4"
+    },
+    "name": "starbucks",
+    "imageLink": "https://www.utm.utoronto.ca/hospitality/sites/files/hospitality/styles/full_width_m/public/2023-08/UTM-Cafe_logos_w%20Brands_V1-07.jpg.webp?itok=8exi1C0d",
+    "averageCost": 2,
+    "peopleInQueue": 1
+  }
+]
