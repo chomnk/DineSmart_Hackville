@@ -6,8 +6,9 @@ function ShopPreview(props) {
     //<div className="bottom_right">{avgprice}</div>
     const waitingnumber = props.waitingnumber;
     const shopname = props.shopname;
+    const clickhandle = props.onClick;
     return (
-        <div>
+        <div onClick={() => clickhandle()}>
             <div className="top">{shopname}</div>
             <div className="middle">
                 <img src={imglink} />
