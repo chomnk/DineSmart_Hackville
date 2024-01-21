@@ -36,9 +36,9 @@ function Dashboard(props) {
                 </div>  
                 <div className="bottomComponent">
                     <select className="bottomComponentDropdown">
-                        <option value="option1">Option 1</option>
-                        <option value="option2">Option 2</option>
-                        <option value="option3">Option 3</option>
+                        <option value="option1">UTM</option>
+                        <option value="option2">Campus 2</option>
+                        <option value="option3">Campus 3</option>
                     </select>
                 </div>
             </div>

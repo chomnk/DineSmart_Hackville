@@ -82,7 +82,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: black 2px solid;
+    border: black 5px solid;
+    border-radius: 50px;
 }
 
 .shop_right_top_left {
