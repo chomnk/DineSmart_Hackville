@@ -8,12 +8,12 @@ function ShopPreview(props) {
 
     return (
         <div className="shopSquare" onClick={() => clickhandle()}>
-            <div className="top">{shopname}</div>
+            <div className="top bottom_left">{shopname}</div>
             <div className="middle">
                 <img src={imglink} />
             </div>
             <div className="bottom">
-                <div className="bottom_left">{waitingnumber}</div>
+                <div className="bottom_left">Number of people waiting: {waitingnumber}</div>
             </div>
         </div>
     )
