@@ -82,3 +82,8 @@
 .shopSquare:hover {
     transform: scale(1.03);
 }
+
+img{
+    max-width:200px;
+    max-height:200px;
+}
