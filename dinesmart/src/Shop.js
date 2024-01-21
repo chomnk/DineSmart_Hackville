@@ -37,7 +37,7 @@ function Shop(props) {
                 alert("You have joined the queue!")
             } else {
                 setQueueButtonState("Join the queue"); 
-                setQueueButtonState("green"); 
+                setQueueButtonColor("green"); 
                 alert("You have exit the queue!")
             }
             const response_updateQueue = await axios.post('http://localhost:5166/api/Restaurant/queue/' + username + '/' + restaurantName);
