@@ -11,7 +11,7 @@ function Dashboard(props) {
 
     const fetchData = async () => {
         try {
-            const response = await axios.get("http://localhost:5166/api/Restaurant");
+            const response = await axios.get("http://localhost:5166/api/Restaurant/allrestaurants");
             setShops(response.data);
         } catch (error) {
             console.error(error);
