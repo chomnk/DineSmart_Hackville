@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './Dashboard.css';
 import ShopPreview from './ShopPreview';
+import axios from 'axios';
 
 function Dashboard(props) {
     const shopToggle = props.shopToggle;
@@ -9,25 +10,19 @@ function Dashboard(props) {
     const [shops, setShops] = useState([]);
 
     const fetchData = async () => {
+        var response;
         try {
-            const response = await fetch("http://localhost:3000/api/Restaurant", 
-                {
-                method: 'GET',
-                headers: {
-                  'Content-Type': 'application/json',
-                  // Add any other headers as needed
-                }});
-            const result = await response.json();
-            setShops(result);
+            response = await fetch("https://localhost:3000/api/Restaurant", {method: "GET"});
         } catch (error) {
             console.error(error);
         } finally {
-            setLoading(false)
+            setLoading(false);
+            return response.json();
         }
     }
 
     useEffect(() => {
-        fetchData();
+        fetchData().then(data => setShops(data));
     }, []);
 
     return (
