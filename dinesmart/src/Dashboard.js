@@ -17,7 +17,7 @@ function Dashboard(props) {
             console.error(error);
         } finally {
             setLoading(false);
-            return response.json();
+            return response;
         }
     }
 
