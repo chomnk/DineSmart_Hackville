@@ -74,7 +74,7 @@ function Shop(props) {
     }
 
     useEffect(() => {
-        fetchReviews().then(data => { setLoading(false);});
+        fetchReviews().then(data => { setLoading(false); console.log(reviews); });
     }, []);
 
     return (
@@ -107,7 +107,7 @@ function Shop(props) {
                     <p>Loading...</p>
                 ) : <div className="shop_right_middle">
                         {Object.entries(reviews).map(([key, value], index) => {
-                            <Reviews username={key} content={value["key"]} key={index} rating={value["value"]} />
+                            (<Reviews username={key} content={value["key"]} key={index} rating={value["value"]} />)
                         })}
                 </div>}
                 <div className="shop_right_bottom">

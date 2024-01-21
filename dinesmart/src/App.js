@@ -10,6 +10,7 @@ function App() {
     if (isShopClicked) contentToRender = 
     <Shop 
         shopInfo={isShopClicked} 
+        username={"Teng"}
         shopToggle={setIsShopClicked}/>
 
     return (
