@@ -25,27 +25,21 @@ function Shop(props) {
     const [reviews, setReviews] = useState([]);
 
     const handleQueuePressed = async (restaurantName, queueButtonState) => {
+        //poll isQueue first
         try {
-            const response = await axios.post('http://localhost:5166/api/Restaurant/queue/' + username + '/' + restaurantName + '/' + , {
-                "restaurantName": restaurantName,
-                "inOrExist": queueButtonState == "Join the queue" ? "in" : "exist"
-            });
-
-            if (queueButtonState == "Join the queue") { 
+            const response = await axios.get('http://localhost:5166/api/Restaurant/isQueue/' + username)
+            if (response.data == "Not in Queue") {
                 setQueueButtonState("Exit the queue"); 
-            } else {
-                setQueueButtonState("Join the queue"); 
-            }
-
-            if (queueButtonColor == "green") { 
                 setQueueButtonColor("red")
             } else {
+                setQueueButtonState("Join the queue"); 
                 setQueueButtonState("green"); 
             }
+            const response_updateQueue = await axios.post('http://localhost:5166/api/Restaurant/queue/' + username + '/' + restaurantName);
         } catch (error) {
             console.error(error);
         } finally {
-
+                
         }
     }
 
