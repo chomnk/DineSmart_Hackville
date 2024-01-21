@@ -64,7 +64,7 @@ function Shop(props) {
 
     const fetchReviews = async () => {
         try {
-            const response = await axios.post('http://localhost:5166/api/Restaurant/findreview/' + restaurantName);
+            const response = await axios.get('http://localhost:5166/api/Restaurant/findreview/' + restaurantName);
             setReviews(response.data);
         } catch (error) {
             console.error(error);
