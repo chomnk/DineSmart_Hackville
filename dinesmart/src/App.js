@@ -5,8 +5,12 @@ import Dashboard from './Dashboard.js';
 import { useState } from 'react';
 
 function App() {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
     const [isShopClicked, setIsShopClicked] = useState(null);
-    let contentToRender = <Dashboard shopToggle={setIsShopClicked}/>
+
+    let contentToRender = <Authentification setIsLoggedIn={setIsLoggedIn}/>;
+
+    if (isLoggedIn) contentToRender = <Dashboard shopToggle={setIsShopClicked}/>
     if (isShopClicked) contentToRender = 
     <Shop 
         shopInfo={isShopClicked} 
