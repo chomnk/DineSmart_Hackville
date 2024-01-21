@@ -115,7 +115,7 @@ function Shop(props) {
                     <div className="shop_right_bottom_right">
                         <div 
                             className='shop_review_queue' 
-                            style={{'color':queueButtonColor}} onClick={() => {handleQueuePressed()}}>
+                            style={{'background-color':queueButtonColor}} onClick={() => {handleQueuePressed()}}>
                             {queueButtonState}
                         </div>
                         <div className='shop_review_submit' onClick={() => {handleReviewSubmit()}}>
