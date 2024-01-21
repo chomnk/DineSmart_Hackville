@@ -3,6 +3,7 @@ using DineSmartWebAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using MongoDB.Bson;
+using MongoDB.Driver;
 using MongoDB.Driver.Linq;
 
 namespace DineSmartWebAPI.Controllers;
@@ -11,8 +12,8 @@ namespace DineSmartWebAPI.Controllers;
 [Route("api/[controller]")]
 public class RestaurantController : ControllerBase
 {
-    private readonly RestaurantService _restaurantService;
-    
+    private RestaurantService _restaurantService;
+
 
     public RestaurantController(RestaurantService restaurantService) =>
         _restaurantService = restaurantService;
@@ -32,7 +33,7 @@ public class RestaurantController : ControllerBase
     public async Task<List<User>> GetUsers() =>
         await _restaurantService.GetUserAsync();
 
-    [HttpGet("{userName}")]
+    [HttpGet("finduser/{userName}")]
     public async Task<ActionResult<User>> Get(string userName)
     {
         var user = await _restaurantService.GetAsync(userName);
@@ -54,7 +55,7 @@ public class RestaurantController : ControllerBase
 
         foreach (User user in _users)
         {
-            if (user.WaitListId == restaurantId)
+            if (user.waitListId == restaurantId)
                 peopleInQueue++;
         }
 
@@ -73,10 +74,10 @@ public class RestaurantController : ControllerBase
 
         foreach (User user in _users)
         {
-            foreach (KeyValuePair<string, KeyValuePair<string, string>> list in user.ListOfReviews)
+            foreach (KeyValuePair<string, KeyValuePair<string, string>> list in user.listOfReviews)
             {
                 if (list.Key == restaurantId)
-                    ReviewList.Add(user.UserName, list.Value);
+                    ReviewList.Add(user.userName, list.Value);
             }
         }
 
@@ -94,7 +95,7 @@ public class RestaurantController : ControllerBase
 
 
     [HttpPost("queue/{userName}/{restaurantId}")]
-    public async Task<IActionResult> Update(string userName, string restaurantId)
+    public async Task<IActionResult> UpdateQueue(string userName, string restaurantId)
     {
         var user = await _restaurantService.GetAsync(userName);
         var restaurant = await _restaurantService.GetSpecificRestaurantAsync(restaurantId);
@@ -104,15 +105,15 @@ public class RestaurantController : ControllerBase
             return NotFound();
         }
 
-        if(user.WaitListId == null)
+        if(user.waitListId is null)
             {
-                user.WaitListId = restaurantId;
-                restaurant.PeopleInQueue++;
+                user.waitListId = restaurantId;
+                restaurant.peopleInQueue++;
             }
         else
             {
-                user.WaitListId = null;
-                restaurant.PeopleInQueue--;
+                user.waitListId = null;
+                restaurant.peopleInQueue--;
             }
         
 
@@ -122,8 +123,8 @@ public class RestaurantController : ControllerBase
 
 
 
-        string lineData = user.WaitListId == null ? "not in line." : $"in line for {user.WaitListId}";
-        return Ok($"{user.UserName} is currently {lineData}.");
+        string lineData = (user.waitListId is null) ? "not in line" : $"in line for {user.waitListId}";
+        return Ok($"{user.userName} is currently {lineData}.");
     }
 
 
@@ -137,13 +138,9 @@ public class RestaurantController : ControllerBase
             return NotFound();
         }
 
-        if (user.ListOfReviews.ContainsKey(restaurantId))
-        {
-            return BadRequest();
-        }
 
         KeyValuePair<string, string> _value = new(review, rating);
-        user.ListOfReviews.Add(key: restaurantId, value: _value);
+        user.listOfReviews.Add(key: restaurantId, value: _value);
 
 
         await _restaurantService.UpdateUserAsync(userName, user);
@@ -161,10 +158,10 @@ public class RestaurantController : ControllerBase
         if (user is null)
             return NotFound();
         
-        return Ok(user.WaitListId != null ? "Not in Queue": "In queue");
+        return Ok(user.waitListId is null ? "Not in Queue": "In queue");
     }
     
-    [HttpDelete("{userName}")]
+    [HttpDelete("delete/{userName}")]
     public async Task<IActionResult> Delete(string userName)
     {
         var user = await _restaurantService.GetAsync(userName);
@@ -179,5 +176,38 @@ public class RestaurantController : ControllerBase
         return NoContent();
     }
 
+    [HttpGet("checklogin/{username}/{password}")]
+    public async Task<IActionResult> CheckLogin(string username, string password)
+    {
+        var user = await _restaurantService.GetAsync(username);
+
+        if (user.password == password)
+            return Ok("Granted");
+        else
+            return BadRequest();
+    }
+    [HttpGet("signup/{username}/{password}")]
+    
+    public async Task<IActionResult> SignUp(string username, string password)
+    {
+        var user = await _restaurantService.GetAsync(username);
+
+        if (user is null)
+        {
+
+            User newUser = new()
+            {
+                userName = username,
+                password = password
+            };
+
+            await _restaurantService.CreateUserAsync(newUser);
+            Console.WriteLine("mongoimport --uri mongodb+srv://davidcaluag:vgDHJCRMYYN2ed9s@cluster0.hjzavom.mongodb.net/RestaurantDatabase --collection _user --type JSON --file \"C:\\Users\\myelf\\OneDrive\\Desktop\\DineSmart_Hackville\\database\\RestaurantDatabase._user.json\"");
+            return Ok("Granted");
+        }
+
+        else
+            return BadRequest("user already exists.");
+    }
 
 }

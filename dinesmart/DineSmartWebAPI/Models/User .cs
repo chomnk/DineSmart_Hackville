@@ -10,14 +10,14 @@ namespace DineSmartWebAPI.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id { get; set; }
 
-        [BsonElement("Name")]
-        public string UserName { get; set; } = "default";
+        [BsonElement("name")]
+        public string userName { get; set; } = "default";
 
-        public Dictionary<string, KeyValuePair<string, string>> ListOfReviews { get; set; } = new();
+        public Dictionary<string, KeyValuePair<string, string>> listOfReviews { get; set; } = new();
 
-        public string Password { get; set; } = "1235456";
+        public string password { get; set; } = "1235456";
 
-        public string? WaitListId { get; set; } = null;
+        public string? waitListId { get; set; } = null;
 
     }
 }

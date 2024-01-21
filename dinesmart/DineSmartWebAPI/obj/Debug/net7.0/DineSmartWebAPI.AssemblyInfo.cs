@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("250e0d39-3006-40c6-bac1-138479889bd5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28dfe222fbfcb53fc041f2687af6e4b714950b1b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d4125b94793731826ca57784f9a0740408682722")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

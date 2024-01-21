@@ -8,8 +8,8 @@ namespace DineSmartWebAPI.Services;
 
 public class RestaurantService
 {
-    private readonly IMongoCollection<Restaurant> _restaurantCollection;
-    private readonly IMongoCollection<User> _userCollection;
+    private IMongoCollection<Restaurant> _restaurantCollection;
+    private IMongoCollection<User> _userCollection;
 
     public RestaurantService(
         IOptions<RestaurantDatabaseSettings> RestaurantDatabaseSettings)
@@ -31,7 +31,7 @@ public class RestaurantService
         await _restaurantCollection.Find(_ => true).ToListAsync();
 
     public async Task<Restaurant> GetSpecificRestaurantAsync(string restaurantName) =>
-        await _restaurantCollection.Find(x => x.RestaurantName == restaurantName).FirstOrDefaultAsync();
+        await _restaurantCollection.Find(x => x.restaurantName == restaurantName).FirstOrDefaultAsync();
 
     public async Task CreateRestaurantAsync(Restaurant newRestaurant)
     {
@@ -42,10 +42,10 @@ public class RestaurantService
         await _userCollection.Find(_ => true).ToListAsync();
 
     public async Task<User?> GetAsync(string userName) =>
-        await _userCollection.Find(x => x.UserName == userName).FirstOrDefaultAsync();
+        await _userCollection.Find(x => x.userName == userName).FirstOrDefaultAsync();
 
     public async Task<List<User>> GetTime(string id) =>
-        await _userCollection.Find(x => x.WaitListId == id).ToListAsync();
+        await _userCollection.Find(x => x.waitListId == id).ToListAsync();
     //await _userCollection.Find(x => x.ListOfReviews. == id).ToListAsync();
 
     public async Task CreateUserAsync(User newUser)
@@ -55,12 +55,12 @@ public class RestaurantService
     }
 
     public async Task UpdateUserAsync(string userName, User updatedUser) =>
-        await _userCollection.ReplaceOneAsync(x => x.UserName == userName, updatedUser);
+        await _userCollection.ReplaceOneAsync(x => x.userName == userName, updatedUser);
 
     public async Task UpdateRestaurantAsync(string userName, Restaurant updatedRestaurant) =>
-        await _restaurantCollection.ReplaceOneAsync(x => x.RestaurantName == userName, updatedRestaurant);
+        await _restaurantCollection.ReplaceOneAsync(x => x.restaurantName == userName, updatedRestaurant);
 
     public async Task RemoveAsync(string userName) =>
-        await _userCollection.DeleteOneAsync(x => x.UserName == userName);
+        await _userCollection.DeleteOneAsync(x => x.userName == userName);
 
 }

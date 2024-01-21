@@ -8,6 +8,7 @@ C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bi
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\AWSSDK.Core.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\AWSSDK.SecurityToken.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\DnsClient.dll
+C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Docker.DotNet.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Microsoft.OpenApi.dll
@@ -16,6 +17,7 @@ C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bi
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\MongoDB.Driver.Core.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\MongoDB.EntityFrameworkCore.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\MongoDB.Libmongocrypt.dll
+C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\SharpCompress.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Snappier.dll
 C:\Users\myelf\OneDrive\Desktop\DineSmart_Hackville\dinesmart\DineSmartWebAPI\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
