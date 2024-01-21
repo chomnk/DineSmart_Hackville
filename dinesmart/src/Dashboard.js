@@ -17,12 +17,12 @@ function Dashboard(props) {
         } catch (error) {
             console.error(error);
         } finally {
-            setLoading(false);
+            
         }
     }
 
     useEffect(() => {
-        fetchData().then(data => setShops(data));
+        fetchData().then(data => {setShops(data); setLoading(false);});
     }, []);
 
     return (
@@ -50,10 +50,10 @@ function Dashboard(props) {
                 <div className="scrollableContainer">
                     {shops.map((shop) => (
                         <ShopPreview 
-                            imglink={shop.imglink} 
-                            avgprice={shop.avgprice} 
-                            waitingnumber={shop.waitingnumber}
-                            shopname={shop.shopname}
+                            imglink={shop.imageLink} 
+                            //avgprice={shop.avgprice} 
+                            waitingnumber={shop.peopleInQueue}
+                            shopname={shop.restaurantName}
                             onClick={() => shopToggle(true)}
                             className="shopSquare"
                         />

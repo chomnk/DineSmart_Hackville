@@ -2,7 +2,8 @@
 
 function ShopPreview(props) {
     const imglink = props.imglink;
-    const avgprice = props.avgprice;
+    //const avgprice = props.avgprice;
+    //<div className="bottom_right">{avgprice}</div>
     const waitingnumber = props.waitingnumber;
     const shopname = props.shopname;
     return (
@@ -13,7 +14,7 @@ function ShopPreview(props) {
             </div>
             <div className="bottom">
                 <div className="bottom_left">{waitingnumber}</div>
-                <div className="bottom_right">{avgprice}</div>
+                
             </div>
         </div>
     )
