@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "wKL04YTpMDFuLKmxOMiYcOinvI4s29mN44b6wpDoYmg=",
+  "Source": "DineSmartWebAPI",
+  "BasePath": "_content/DineSmartWebAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

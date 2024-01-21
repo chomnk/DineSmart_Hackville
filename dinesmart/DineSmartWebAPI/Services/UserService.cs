@@ -1,4 +1,6 @@
-﻿using DineSmartWebAPI.Models;
+﻿/*
+ * 
+ * using DineSmartWebAPI.Models;
 using Microsoft.Extensions.Options;
 using MongoDB.Bson;
 using MongoDB.Driver;
@@ -45,3 +47,5 @@ public class UserService
     public async Task RemoveAsync(string userName) =>
         await _userCollection.DeleteOneAsync(x => x.UserName == userName);
 }
+
+*/

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f0bca930bc4f26670642e3536986dd3e61af7e62")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28dfe222fbfcb53fc041f2687af6e4b714950b1b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineSmartWebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
