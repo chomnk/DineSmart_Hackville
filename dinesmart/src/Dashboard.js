@@ -10,14 +10,13 @@ function Dashboard(props) {
     const [shops, setShops] = useState([]);
 
     const fetchData = async () => {
-        var response;
         try {
-            response = await fetch("http://localhost:3000/api/Restaurant", {method: "GET"});
+            const response = await axios.get("http://localhost:3000/api/Restaurant");
+            setShops(response.data);
         } catch (error) {
             console.error(error);
         } finally {
             setLoading(false);
-            return response;
         }
     }
 
