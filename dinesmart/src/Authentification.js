@@ -20,7 +20,8 @@ const Authentification = (props) => {
     e.preventDefault();
     try {
         const response = await axios.get("http://localhost:5166/api/Restaurant/checklogin/" + username + '/' + password);
-        if (response.ok) {
+        
+        if (response.data = "Granted") {
             setIsLoggedIn(true);
         }
     } catch (error) {
