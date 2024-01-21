@@ -21,7 +21,6 @@ function Shop(props) {
     const username = props.username;
 
     const textAreaRef = useRef(null);
-    const [textareaValue, setTextareaValue] = useState("");
     const [rating, SetRating] = useState(3);
 
     const [loading, setLoading] = useState(true);
@@ -107,7 +106,7 @@ function Shop(props) {
                         })}
                 </div>}
                 <div className="shop_right_bottom">
-                    <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Type something..." value={textareaValue}/>
+                    <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Type something..."/>
                     <div className="shop_right_bottom_right">
                         <div className='shop_review_queue' style={{'color':{queueButtonColor}}} onClick={() => {handleQueuePressed(restaurantName, queueButtonState)}}>
                             {queueButtonState}

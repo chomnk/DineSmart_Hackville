@@ -51,7 +51,7 @@ function Dashboard(props) {
                         <ShopPreview 
                             key={index}
                             imglink={shop.imageLink} 
-                            //avgprice={shop.avgprice} 
+                            username={"Teng"}
                             waitingnumber={shop.peopleInQueue}
                             shopname={shop.restaurantName}
                             onClick={() => shopToggle(shop)}
