@@ -12,6 +12,7 @@ function Dashboard(props) {
     const fetchData = async () => {
         try {
             const response = await axios.get("http://localhost:3000/api/Restaurant");
+            console.log(response);
             setShops(response.data);
         } catch (error) {
             console.error(error);
