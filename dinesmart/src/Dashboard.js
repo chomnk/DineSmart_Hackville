@@ -10,7 +10,7 @@ function Dashboard(props) {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("localhost:3000/api/Restaurant");
+            const response = await fetch("http://localhost:3000/api/Restaurant");
             const result = await response.json();
             setShops(result);
         } catch (error) {
