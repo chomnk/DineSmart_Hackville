@@ -21,8 +21,10 @@ function Dashboard(props) {
         }
     }
 
+    //setShops(data);
+
     useEffect(() => {
-        fetchData().then(data => {setShops(data); setLoading(false);});
+        fetchData().then(data => { setLoading(false);});
     }, []);
 
     return (
