@@ -9,9 +9,9 @@ import Reviews from "./Reviews";
 function Shop(props) {
     const shopInfo = props.shopInfo;
 
-    const restaurantName = props.restaurantName;
-    const imageLink = props.imageLink;
-    const peopleInQueue = props.peopleInQueue;
+    const restaurantName = shopInfo.restaurantName;
+    const imageLink = shopInfo.imageLink;
+    const peopleInQueue = shopInfo.peopleInQueue;
 
     const shopToggle = props.shopToggle;
 
