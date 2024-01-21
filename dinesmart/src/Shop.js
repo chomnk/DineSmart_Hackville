@@ -2,6 +2,9 @@ import ReactStars from "react-rating-stars-component";
 import React from "react";
 import { render } from "react-dom";
 import './shop.css'
+import { useState, useRef, useEffect } from "react";
+import { Axios } from "axios";
+import Reviews from "./Reviews";
 
 function Shop(props) {
     const shopInfo = props.shopInfo;
