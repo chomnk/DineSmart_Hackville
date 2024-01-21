@@ -5,18 +5,17 @@ import { useState } from 'react';
 import Authentification from './Authentification.js';
 
 function App() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false)
+    const [isLoggedIn, setIsLoggedIn] = useState(null)
     const [isShopClicked, setIsShopClicked] = useState(null);
 
     let contentToRender = <Authentification setIsLoggedIn={setIsLoggedIn}/>;
 
-    if (isLoggedIn) contentToRender = <Dashboard shopToggle={setIsShopClicked}/>
+    if (isLoggedIn) contentToRender = <Dashboard shopToggle={setIsShopClicked} username={isLoggedIn}/>
     if (isShopClicked) contentToRender = 
     <Shop 
         shopInfo={isShopClicked} 
-        username={"teng"}
+        username={isLoggedIn}
         shopToggle={setIsShopClicked}/>
-
     return (
         <>{contentToRender}</>
     );

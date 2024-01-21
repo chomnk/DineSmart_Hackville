@@ -53,7 +53,7 @@ function Shop(props) {
         const element = textAreaRef.current;
         const text = element.value;
         try {
-            const response = await axios.post('http://localhost:5166/api/Restaurant/newReview/' + restaurantName + '/' + text + '/' + String(rating));
+            const response = await axios.post('http://localhost:5166/api/Restaurant/newReview/' + username + '/' + restaurantName + '/' + text + '/' + String(rating));
             alert("You have submitted the review!")
         } catch (error) {
             console.error(error);
