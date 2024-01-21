@@ -12,7 +12,7 @@ function Dashboard(props) {
     const fetchData = async () => {
         var response;
         try {
-            response = await fetch("https://localhost:3000/api/Restaurant", {method: "GET"});
+            response = await fetch("http://localhost:3000/api/Restaurant", {method: "GET"});
         } catch (error) {
             console.error(error);
         } finally {
