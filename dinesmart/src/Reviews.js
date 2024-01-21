@@ -1,12 +1,13 @@
-function Reviews(props) {
-    const infopack = props.props;
+import "./Reviews.css"
 
-    const content = infopack.content;
-    const username = infopack.username;
-    const rating = infopack.rating;
+function Reviews(props) {
+
+    const content = props.content;
+    const username = props.username;
+    const rating = props.rating;
 
     return (
-        <div>
+        <div className="review">
             <div>{username}</div>
             <div>{content}</div>
             <div>{rating}</div>

@@ -24,7 +24,7 @@ function Shop(props) {
     const [rating, SetRating] = useState(3);
 
     const [loading, setLoading] = useState(true);
-    const [reviews, setReviews] = useState([]);
+    const [reviews, setReviews] = useState({});
 
     const handleQueuePressed = async () => {
         //poll isQueue first
@@ -106,8 +106,8 @@ function Shop(props) {
                 {loading ? (
                     <p>Loading...</p>
                 ) : <div className="shop_right_middle">
-                        {reviews.map((review, index) => {
-                            <Reviews props={review} key={index} />
+                        {Object.entries(reviews).map(([key, value], index) => {
+                            <Reviews username={key} content={value["key"]} key={index} rating={value["value"]} />
                         })}
                 </div>}
                 <div className="shop_right_bottom">
