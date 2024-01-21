@@ -50,8 +50,9 @@ function Dashboard(props) {
                     <p>Loading...</p>
                 ) : (
                 <div className="scrollableContainer">
-                    {shops.map((shop) => (
+                    {shops.map((shop, index) => (
                         <ShopPreview 
+                            key={index}
                             imglink={shop.imageLink} 
                             //avgprice={shop.avgprice} 
                             waitingnumber={shop.peopleInQueue}
