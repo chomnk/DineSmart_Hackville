@@ -111,7 +111,7 @@ function Shop(props) {
                         })}
                 </div>}
                 <div className="shop_right_bottom">
-                    <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Type something..."/>
+                    <textarea ref={textAreaRef} className="shop_right_bottom_left" placeholder="Leave some review for this food option!"/>
                     <div className="shop_right_bottom_right">
                         <div 
                             className='shop_review_queue' 

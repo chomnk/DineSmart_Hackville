@@ -83,10 +83,12 @@
     justify-content: center;
     align-items: center;
     border: black 5px solid;
-    border-radius: 50px;
+    border-radius: 55px;
 }
 
 .shop_right_top_left {
+    font-size: 48px;
+    font-weight: 900;
     flex: 1;
 }
 
